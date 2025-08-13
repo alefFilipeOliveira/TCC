@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UBS Triagem Inteligente - App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">UPA Triagens</div>
+        <div class="right">
+            <span id="user-info"></span>
+            <button id="logout">Sair</button>
+        </div>
+    </header>
+
+    <main class="container grid-2">
+        <section class="card">
+            <h2>Cadastro & Triagem</h2>
+            <form id="triage-form">
+                <div class="grid">
+                    <label>Nome<input type="text" name="nome" required /></label>
+                    <label>Idade<input type="number" name="idade" min="0" max="120" required /></label>
+                    <label>Gênero
+            <select name="genero" required>
+              <option value="">Selecione</option>
+              <option>Feminino</option><option>Masculino</option><option>Outro</option><option>Prefiro não informar</option>
+            </select>
+          </label>
+                    <label>Alergias<input type="text" name="alergias" placeholder="Ex.: Dipirona" /></label>
+                    <label class="checkbox"><input type="checkbox" name="gestante" /> Gestante</label>
+                </div>
+                <h3>Sintomas</h3>
+                <div class="chips" id="symptom-chips"></div>
+                <label>Descrição livre<textarea name="descricaoLivre" rows="5"></textarea></label>
+                <button type="submit">Analisar com IA</button>
+            </form>
+
+            <section id="resultado" class="result" hidden>
+                <h3>Resultado</h3>
+                <div id="risk-badge"></div>
+                <p id="recomendacao"></p>
+                <p id="hipotese"></p>
+                <details>
+                    <summary>Relatório completo (JSON)</summary>
+                    <pre id="relatorio-json"></pre>
+                </details>
+                <div class="actions">
+                    <a id="btn-pdf" class="linklike" target="_blank" rel="noopener">Baixar PDF</a>
+                    <button id="btn-nova">Nova triagem</button>
+                </div>
+            </section>
+        </section>
+
+        <section class="card">
+            <h2>Pacientes & Histórico</h2>
+            <div class="row">
+                <input id="search" placeholder="Buscar paciente..." />
+                <button id="btn-search">Buscar</button>
+            </div>
+            <ul id="patients"></ul>
+            <h3>Histórico</h3>
+            <ul id="history"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 Protótipo educacional. Não utilizar como diagnóstico.</small>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
