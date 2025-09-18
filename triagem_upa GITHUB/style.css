@@ -1,0 +1,9 @@
+
+/* v7 styles */
+:root{--brand:#2b6cb0;--accent:#10b981;--warn:#f59e0b;--danger:#ef4444}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#f4f7fb;color:#0b1220}
+.card{border-radius:12px}
+.hero{border-radius:8px}
+.chip-item{padding:8px 10px;font-size:0.9rem}
+.badge{font-size:0.9rem}
+.spinner-border{vertical-align:middle}
